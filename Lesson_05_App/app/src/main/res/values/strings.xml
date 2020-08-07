@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Lesson_05_App</string>
+    <string name="pizza_shop">Android ATC pizza shop</string>
+<!--    aqui podemos crear archivos string para soportar los diferentes idiomas.-->
+    <string name="question">Which countries have English as an official language?</string>
+</resources>
