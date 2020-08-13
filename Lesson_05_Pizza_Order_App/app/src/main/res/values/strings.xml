@@ -3,9 +3,5 @@
     <string name="pizza_shop">Android ATC pizza shop</string>
 <!--    aqui podemos crear archivos string para soportar los diferentes idiomas.-->
     <string name="question">Which countries have English as an official language?</string>
-    <string name="pizzaQuestion">Choose Your Pizza Size:</string>
-    <string name="small">Small ($ 5)</string>
-    <string name="medium">Medium ($ 7)</string>
-    <string name="large">Large ($ 9)</string>
 
 </resources>

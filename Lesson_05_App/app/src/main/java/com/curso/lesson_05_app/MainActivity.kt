@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,11 +13,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun onClicked(view: View) {
+    fun orderButtonClicked(view: View)
+    {
+        var pizzaSizePrice = 0.0
+        var toppingsTotal = 0.0
+        when{
+            radioGroup.smallpizza.isChecked -> pizzaSizePrice = 5.0
+            radioGroup.mediumpizza.isChecked -> pizzaSizePrice = 7.0
+            radioGroup.largepizza.isChecked -> pizzaSizePrice = 9.0
+        }
+        if (OnionsCheckBox.isChecked) {toppingsTotal +=1}
+        if (OlivesCheckBox.isChecked) {toppingsTotal +=2}
+        if (TomatoesCheckBox.isChecked) {toppingsTotal +=3}
 
-        if(USAcheckBox.isChecked) textresult.text ="USA: Correct Answer"
-        if(CanadacheckBox.isChecked) textresult.text ="Canada: Correct Answer"
-        if(ChinacheckBox.isChecked) textresult.text ="China: Correct Answer"
+        totalPrice.text = "Total Order Price= $"+(pizzaSizePrice + toppingsTotal)
     }
 
 }
