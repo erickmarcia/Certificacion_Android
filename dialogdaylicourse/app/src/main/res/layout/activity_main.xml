@@ -2,15 +2,77 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="showSnackBar"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="151dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:onClick="showSnackBar"
+        android:text="TEST CONECTION"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtime" />
+
+    <TextView
+        android:id="@+id/edtime"
+        android:layout_width="141dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="48dp"
+        android:inputType="time"
+        android:onClick="showtimePicker"
+        android:text="Hora: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toEndOf="@+id/edfecha"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/edfecha"
+        android:layout_width="169dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="48dp"
+        android:onClick="showDialogPicker"
+        android:text="Fecha: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="169dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="16dp"
+        android:text="Fecha: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="151dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="28dp"
+        android:onClick="showDialogPicker"
+        android:text="SHOW DATE PICKER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeekBarResult" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="115dp"
         android:layout_height="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="32dp"
         android:onClick="simulateDownload"
         android:text="DOWNLOAD"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,44 +80,43 @@
         app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="131dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="36dp"
-        android:onClick="showAlertDialog"
-        android:text="SHOW ALERT DIALOG"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:text="Android Dialogs"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ProgressBar
         android:id="@+id/myProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="234dp"
         android:layout_height="11dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.282"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
+        android:id="@+id/tvSeekBarResult"
+        android:layout_width="322dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="48dp"
+        android:text="Select 0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mySeekBar" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:text="Android Dialogs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tvProgress"
         android:layout_width="76dp"
         android:layout_height="26dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="24dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,18 +128,36 @@
         android:id="@+id/mySeekBar"
         android:layout_width="231dp"
         android:layout_height="11dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myProgressBar" />
 
-    <TextView
-        android:id="@+id/tvSeekBarResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/mySeekBar"
-        tools:layout_editor_absoluteX="135dp" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="131dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+        android:onClick="showAlertDialog"
+        android:text="SHOW ALERT DIALOG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <WebView
+        android:id="@+id/mywebView"
+        android:layout_width="410dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
