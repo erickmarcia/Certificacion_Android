@@ -1,0 +1,51 @@
+ca-app-pub-4328243086574711~4591302380  IDAplicación
+
+ca-app-pub-4328243086574711/9372516469  ID Bloque Anuncio
+
+
+implementation 'com.google.android.gms:play-services-ads:19.4.0'
+En el build.gradle a nivel de proyecto, agregan estas lineas dentro de repositories. maven{
+            url "https://maven.google.com"
+        }
+<uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+<meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+<activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
+
+
+
+https://admob.google.com/home/
+
+
+xmlns:ads="http://schemas.android.com/apk/res-auto"
+ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-2508915537288596/5311565102"
+
+
+
+https://developers.google.com/admob/android/test-ads
+aca estan
+
+
+lateinit  var madView: AdView
+
+//ads - Dentro de onCreate
+        MobileAds.initialize(this){
+            Toast.makeText(applicationContext,"Carga de anuncios inicializada", Toast.LENGTH_LONG).show()
+        }
+        mAdView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.LoadAd(adRequest)
+
+
+En AndroidManifes dentro de Aplication
+<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4328243086574711~4591302380"/>
+
